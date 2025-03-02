@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo illum cupiditate deleniti eligendi natus, ab aut odit quas laborum dolorum officiis ullam esse commodi libero veritatis rerum optio maxime et laboriosam. Dolores hic praesentium, quaerat quia non nobis ducimus similique?</p>
+
+    <h1 id="data"></h1>
+<button onclick=""demo()>Request</button>
+    <h1>AJAX</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolorem officia numquam fuga facilis autem temporibus deserunt sapiente vel qui, cum labore commodi dolores quaerat mollitia sunt quisquam reiciendis eligendi dolore blanditiis ex. Alias consequatur eius pariatur laudantium fuga vero!</p>
+</body>
+<script>
+    function demo(){
+      var request= new XMLHttpRequest();
+      request.open("POST","data.txt",true);
+      request.send();
+
+      request.onreadystatechange=function(){
+    if(request.readyState==4){
+        var a=document.getElementById("data");
+        a.innerHTML=request.response;
+    }
+      }
+
+    }
+</script>
+</html>
